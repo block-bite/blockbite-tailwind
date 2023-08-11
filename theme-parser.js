@@ -1,25 +1,16 @@
 /*
  * This file is used to parse the theme.json file from the theme to generate the tailwind config
  */
-import { gridSpacing, clampSpacing } from "./lib/spacing";
+import { getSpacing } from "./lib/spacing";
 import { getScreens } from "./lib/responsive";
 import { getAspectRatio } from "./lib/aspect-ratio";
 import { getContainer } from "./lib/container";
 
 export function themeParser(theme) {
 
-  // import 16 grid spacing
-  const spacing = gridSpacing();
+  // import 16-grid and clamp spacing
+  const spacing = getSpacing();
   
-  // import clamp sizes for gutters etc
-  const ClampSizes = clampSpacing();
-  
-  // add clamp spacing for gaps
-  ClampSizes.forEach((size) => {
-    // add to spacing
-    spacing["clamp-" + size.slug] = size.size;
-  });
-
   // add colors
   let colors = {};
   theme.settings.color.palette.forEach((color) => {
