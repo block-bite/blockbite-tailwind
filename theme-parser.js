@@ -1,19 +1,31 @@
 /*
  * This file is used to parse the theme.json file from the theme to generate the tailwind config
  */
+import { gridSpacing, clampSpacing } from "./lib/spacing";
+import { getScreens } from "./lib/responsive";
+import { getAspectRatio } from "./lib/aspect-ratio";
+import { getContainer } from "./lib/container";
 
-export function themeParser(theme, parseJson) {
-  if (parseJson) {
-    theme = JSON.parse(theme);
-  }
-  // init 16 grid spacing
-  const gridSpacing = require("./spacing.js");
-  const spacing = gridSpacing.gridSpacing();
+export function themeParser(theme) {
+
+  // import 16 grid spacing
+  const spacing = gridSpacing();
+  
+  // import clamp sizes for gutters etc
+  const ClampSizes = clampSpacing();
+  
+  // add clamp spacing for gaps
+  ClampSizes.forEach((size) => {
+    // add to spacing
+    spacing["clamp-" + size.slug] = size.size;
+  });
+
   // add colors
   let colors = {};
   theme.settings.color.palette.forEach((color) => {
     colors[color.slug] = color.color;
   });
+
   // add fonts and fontWeights
   let fonts = {};
   let fontWeights = {};
@@ -26,28 +38,6 @@ export function themeParser(theme, parseJson) {
       });
     }
   });
-  
-  // extend and create extra clampsizes
-  const extendClamp = [
-    {
-      slug: "8",
-      size: "clamp(16px, 1vw, 32px);",
-    },
-    {
-      slug: "9",
-      size: "clamp(16px, 1vw, 32px);",
-    },
-    {
-      slug: "10",
-      size: "clamp(16px, 1vw, 32px);",
-    },
-  ];
-  // get clamps from theme.json
-  const ClampSizes = theme.settings.spacing.spacingSizes.concat(extendClamp);
-  ClampSizes.forEach((size) => {
-    // add to spacing
-    spacing["clamp-" + size.slug] = size.size;
-  });
 
   // fontsizes
   let fontSizes = {};
@@ -56,28 +46,14 @@ export function themeParser(theme, parseJson) {
     fontSizes[size.slug] = `var(--wp--preset--font-size--${size.slug})`;
   });
 
-  const screens = {
-    // max 320px
-    xs: { max: "767px" },
-    md: { min: "768px", max: "1139px" },
-    xl: { min: "1140px" },
-  };
+  // responsive
+  const screens = getScreens();
+  // aspect ratio 
+  const aspectRatio = getAspectRatio();
+  // container
+  const container = getContainer();
 
-  const aspectRatio = {
-    portrait: "3 / 4",
-      landscape: "4 / 3",
-  };
-
-  const container = {
-    center: true,
-    padding: {
-      DEFAULT: "1.6rem",
-      sm: "1rem",
-      lg: "1rem",
-    },
-  };
-
-  // screens
+  // export object
   return {
     fonts: fonts,
     fontWeights: fontWeights,
