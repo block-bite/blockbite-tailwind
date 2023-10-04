@@ -1,6 +1,6 @@
 module.exports = function ({ addComponents, theme }) {
 	const container = {
-	  '.maxed-container': {
+	  '.container-fluid': {
 		width: '99vw',
 		marginLeft: 'auto',
 		marginRight: 'auto',
@@ -15,7 +15,7 @@ module.exports = function ({ addComponents, theme }) {
 	// Add a media query for screens at '2xl' size
 	if (maxWidth2xl) {
 	  container[`@media (min-width: ${maxWidth2xl})`] = {
-		'.maxed-container': {
+		'.container-fluid': {
 		  maxWidth: maxWidth2xl,
 		},
 	  };
