@@ -1,7 +1,7 @@
 module.exports = function ({ addComponents, theme }) {
 	const container = {
 	  '.container-fluid': {
-		width: '99vw',
+		maxWidth: '99vw',
 		marginLeft: 'auto',
 		marginRight: 'auto',
 		paddingLeft: '1rem',
