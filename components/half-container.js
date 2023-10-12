@@ -1,11 +1,7 @@
 module.exports = function ({ addComponents, theme }) {
 	const container = {
 	  '.container-half': {
-		maxWidth: '99vw',
-		marginLeft: 'auto',
-		marginRight: 'auto',
-		paddingLeft: '1rem',
-		paddingRight: '1rem',
+		width: '100%'
 	  },
 	};
   
@@ -17,14 +13,14 @@ module.exports = function ({ addComponents, theme }) {
 	if (maxWidth2xl) {
 	  container[`@media (min-width: ${maxWidth2xl})`] = {
 		'.container-half': {
-		  maxWidth: calc(maxWidth2xl / 2),
+		  width: `calc(${maxWidth2xl} / 2)`,
 		},
 	  };
 	}
 	if (maxWidthXl) {
 		container[`@media (min-width: ${maxWidthXl})`] = {
 		  '.container-half': {
-			maxWidth: calc(maxWidthXl / 2),
+			width: `calc(${maxWidthXl} / 2)`,
 		  },
 		};
 	  }
