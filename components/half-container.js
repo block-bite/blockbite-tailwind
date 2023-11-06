@@ -8,6 +8,8 @@ module.exports = function ({ addComponents, theme }) {
 	// Access the '2xl' screen size from Tailwind CSS configuration
 	const maxWidth2xl = theme('screens.2xl');
 	const maxWidthXl = theme('screens.xl');
+
+	console.log(maxWidth2xl, maxWidthXl);
   
 	// Add a media query for screens at '2xl' size
 	if (maxWidth2xl) {
