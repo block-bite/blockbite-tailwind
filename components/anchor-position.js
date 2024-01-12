@@ -1,8 +1,8 @@
 module.exports = function ({ addComponents, theme }) {
   const anchorTopCenter = {
     ".anchor-top-center": {
-      position: "absolute%",
-      top: "50%",
+      position: "absolute",
+      top: "0",
       left: "50%",
       transform: "translate(-50%, -50%)",
     },
@@ -27,9 +27,9 @@ module.exports = function ({ addComponents, theme }) {
   const anchorBottomCenter = {
     ".anchor-bottom-center": {
       position: "absolute",
-      bottom: "50%",
+      bottom: "0",
       left: "50%",
-      transform: "translate(-50%, -50%)",
+      transform: "translate(-50%, 50%)",
     },
   };
 
@@ -54,7 +54,7 @@ module.exports = function ({ addComponents, theme }) {
       position: "absolute",
       top: "50%",
       left: "0",
-      transform: "translate(0, -50%)",
+      transform: "translate(-50%, -50%)",
     },
   };
 
@@ -63,7 +63,7 @@ module.exports = function ({ addComponents, theme }) {
       position: "absolute",
       top: "50%",
       right: "0",
-      transform: "translate(0, -50%)",
+      transform: "translate(50, -50%)",
     },
   };
 
