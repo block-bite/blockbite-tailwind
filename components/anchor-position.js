@@ -63,7 +63,7 @@ module.exports = function ({ addComponents, theme }) {
       position: "absolute",
       top: "50%",
       right: "0",
-      transform: "translate(50, -50%)",
+      transform: "translate(50%, -50%)",
     },
   };
 
@@ -81,7 +81,7 @@ module.exports = function ({ addComponents, theme }) {
       position: "absolute",
       top: "0",
       left: "50%",
-      transform: "translate(-50%, 0)",
+      transform: "translate(-50%, 0%)",
     },
   };
 
@@ -90,7 +90,7 @@ module.exports = function ({ addComponents, theme }) {
       position: "absolute",
       bottom: "0",
       left: "50%",
-      transform: "translate(-50%, 0)",
+      transform: "translate(-50%, 0%)",
     },
   };
 
