@@ -19,6 +19,14 @@ module.exports = plugin(function ({ addUtilities }) {
     utilities[`.max-h-screen-${i}`] = {
       maxHeight: `${i}vh`,
     };
+
+    utilities[`.min-w-screen-${i}`] = {
+      minWidth: `${i}vw`,
+    };
+
+    utilities[`.max-w-screen-${i}`] = {
+      maxWidth: `${i}vw`,
+    };
   }
 
   addUtilities(utilities);
