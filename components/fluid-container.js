@@ -1,7 +1,7 @@
 module.exports = function ({ addComponents, theme }) {
   const container = {
     ".container-fluid": {
-      maxWidth: "95vw",
+      maxWidth: "var(--container-fluid-xl)",
       marginLeft: "auto",
       marginRight: "auto",
       paddingLeft: "1rem",
@@ -23,7 +23,7 @@ module.exports = function ({ addComponents, theme }) {
   if (maxWidthSm) {
     container[`@media (max-width: ${maxWidthSm})`] = {
       ".container-fluid": {
-        maxWidth: "98vw",
+        maxWidth: "var(--container-fluid-xs)",
       },
     };
   }
