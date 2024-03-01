@@ -17,6 +17,10 @@ module.exports = function ({ addComponents, theme }) {
     container[`@media (min-width: ${maxWidth2xl})`] = {
       ".container-fluid": {
         maxWidth: maxWidth2xl,
+        marginLeft: "auto",
+        marginRight: "auto",
+        paddingLeft: "1rem",
+        paddingRight: "1rem",
       },
     };
   }
@@ -24,6 +28,10 @@ module.exports = function ({ addComponents, theme }) {
     container[`@media (max-width: ${maxWidthSm})`] = {
       ".container-fluid": {
         maxWidth: "var(--container-fluid-xs)",
+        marginLeft: "auto",
+        marginRight: "auto",
+        paddingLeft: "1rem",
+        paddingRight: "1rem",
       },
     };
   }
