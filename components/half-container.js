@@ -1,6 +1,6 @@
 module.exports = function ({ addComponents, theme }) {
   const container = {
-    ".container-half": {
+    ".b_container-half": {
       width: "100%",
     },
   };

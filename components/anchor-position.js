@@ -1,6 +1,6 @@
 module.exports = function ({ addComponents, theme }) {
   const anchorTopCenter = {
-    ".anchor-top-center": {
+    ".b_anchor-top-center": {
       position: "absolute",
       top: "0",
       left: "50%",
@@ -9,7 +9,7 @@ module.exports = function ({ addComponents, theme }) {
   };
 
   const anchorTopLeft = {
-    ".anchor-top-left": {
+    ".b_anchor-top-left": {
       position: "absolute",
       top: "0",
       left: "0",
@@ -17,7 +17,7 @@ module.exports = function ({ addComponents, theme }) {
   };
 
   const anchorTopRight = {
-    ".anchor-top-right": {
+    ".b_anchor-top-right": {
       position: "absolute",
       top: "0",
       right: "0",
@@ -25,7 +25,7 @@ module.exports = function ({ addComponents, theme }) {
   };
 
   const anchorBottomCenter = {
-    ".anchor-bottom-center": {
+    ".b_anchor-bottom-center": {
       position: "absolute",
       bottom: "0",
       left: "50%",
@@ -34,7 +34,7 @@ module.exports = function ({ addComponents, theme }) {
   };
 
   const anchorBottomLeft = {
-    ".anchor-bottom-left": {
+    ".b_anchor-bottom-left": {
       position: "absolute",
       bottom: "0",
       left: "0",
@@ -42,7 +42,7 @@ module.exports = function ({ addComponents, theme }) {
   };
 
   const anchorBottomRight = {
-    ".anchor-bottom-right": {
+    ".b_anchor-bottom-right": {
       position: "absolute",
       bottom: "0",
       right: "0",
@@ -50,7 +50,7 @@ module.exports = function ({ addComponents, theme }) {
   };
 
   const anchorCenterLeft = {
-    ".anchor-center-left": {
+    ".b_anchor-center-left": {
       position: "absolute",
       top: "50%",
       left: "0",
@@ -59,7 +59,7 @@ module.exports = function ({ addComponents, theme }) {
   };
 
   const anchorCenterRight = {
-    ".anchor-center-right": {
+    ".b_anchor-center-right": {
       position: "absolute",
       top: "50%",
       right: "0",
@@ -68,7 +68,7 @@ module.exports = function ({ addComponents, theme }) {
   };
 
   const anchorCenterCenter = {
-    ".anchor-center-center": {
+    ".b_anchor-center-center": {
       position: "absolute",
       top: "50%",
       left: "50%",
@@ -77,7 +77,7 @@ module.exports = function ({ addComponents, theme }) {
   };
 
   const anchorCenterTop = {
-    ".anchor-center-top": {
+    ".b_anchor-center-top": {
       position: "absolute",
       top: "0",
       left: "50%",
@@ -86,7 +86,7 @@ module.exports = function ({ addComponents, theme }) {
   };
 
   const anchorCenterBottom = {
-    ".anchor-center-bottom": {
+    ".b_anchor-center-bottom": {
       position: "absolute",
       bottom: "0",
       left: "50%",
