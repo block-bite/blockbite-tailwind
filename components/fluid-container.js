@@ -1,6 +1,6 @@
 module.exports = function ({ addComponents, theme }) {
   const container = {
-    ".container-fluid": {
+    ".b_container-fluid": {
       maxWidth: "var(--container-fluid-xl)",
       marginLeft: "auto",
       marginRight: "auto",
@@ -15,7 +15,7 @@ module.exports = function ({ addComponents, theme }) {
   // Add a media query for screens at '2xl' size
   if (maxWidth2xl) {
     container[`@media (min-width: ${maxWidth2xl})`] = {
-      ".container-fluid": {
+      ".b_container-fluid": {
         maxWidth: maxWidth2xl,
         marginLeft: "auto",
         marginRight: "auto",
@@ -26,7 +26,7 @@ module.exports = function ({ addComponents, theme }) {
   }
   if (maxWidthSm) {
     container[`@media (max-width: ${maxWidthSm})`] = {
-      ".container-fluid": {
+      ".b_container-fluid": {
         maxWidth: "var(--container-fluid-xs)",
         marginLeft: "auto",
         marginRight: "auto",
