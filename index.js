@@ -1,7 +1,7 @@
 // Import the function from the appropriate location
 import { getAspectRatio } from "./lib/aspect-ratio";
 import { getContainer } from "./lib/container";
-import { getGridClampSpacing } from "./lib/spacing";
+import { getGridClampSpacing, getNativeSpacing } from "./lib/spacing";
 import { gridSpacing } from "./lib/spacing";
 import { clampSpacing } from "./lib/spacing";
 import { getScreens } from "./lib/screens";
@@ -12,7 +12,8 @@ import { themeParser } from "./lib/theme-parser";
 export {
   getAspectRatio,
   getContainer,
-  getSpacing,
+  getGridClampSpacing,
+  getNativeSpacing,
   getColors,
   getColorObject,
   gridSpacing,
