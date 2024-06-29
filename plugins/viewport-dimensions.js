@@ -4,27 +4,27 @@ module.exports = plugin(function ({ addUtilities }) {
   const utilities = {};
 
   for (let i = 10; i <= 100; i += 10) {
-    utilities[`.b_w-screen-${i}`] = {
+    utilities[`.w-b_screen-${i}`] = {
       width: `${i}vw`,
     };
 
-    utilities[`.b_h-screen-${i}`] = {
+    utilities[`.h-b_screen-${i}`] = {
       height: `${i}vh`,
     };
 
-    utilities[`.b_min-h-screen-${i}`] = {
+    utilities[`.min-h-b_screen-${i}`] = {
       minHeight: `${i}vh`,
     };
 
-    utilities[`.b_max-h-screen-${i}`] = {
+    utilities[`.max-h-b_screen-${i}`] = {
       maxHeight: `${i}vh`,
     };
 
-    utilities[`.b_min-w-screen-${i}`] = {
+    utilities[`.min-w-b_screen-${i}`] = {
       minWidth: `${i}vw`,
     };
 
-    utilities[`.b_max-w-screen-${i}`] = {
+    utilities[`.max-w-b_screen-${i}`] = {
       maxWidth: `${i}vw`,
     };
   }
