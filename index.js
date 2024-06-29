@@ -7,6 +7,7 @@ import { clampSpacing } from "./lib/spacing";
 import { screenSpacing } from "./lib/spacing";
 import { percentSpacing } from "./lib/spacing";
 import { nativeSpacing } from "./lib/spacing";
+import { spanSpacing } from "./lib/spacing";
 import { getScreens } from "./lib/screens";
 import { getColors, getColorObject } from "./lib/colors";
 import { themeParser } from "./lib/theme-parser";
@@ -22,6 +23,7 @@ export {
   nativeSpacing,
   clampSpacing,
   screenSpacing,
+  spanSpacing,
   percentSpacing,
   getScreens,
   themeParser,
