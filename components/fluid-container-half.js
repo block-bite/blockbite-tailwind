@@ -17,17 +17,17 @@ module.exports = function ({ addComponents, theme }) {
   };
 
   const maxWidth2xl = theme("screens.2xl");
-  const maxWidthXl = theme("screens.xl");
+  const minWidthLg = theme("screens.lg");
 
-  if (maxWidthXl) {
-    container[`@media (min-width: ${maxWidthXl})`] = {
+  if (minWidthLg) {
+    container[`@media (min-width: ${minWidthLg})`] = {
       ".b_container-fluid-half-l": {
         width: "50%",
-        marginLeft: `calc((100vw - var(--container-fluid-xl) - 1rem) / 2)`,
+        marginLeft: `calc((100% - var(--container-fluid-xl)) / 2)`,
       },
       ".b_container-fluid-half-r": {
         width: "50%",
-        marginRight: `calc((100vw - var(--container-fluid-xl) - 1rem) / 2 )`,
+        marginRight: `calc((100% - var(--container-fluid-xl)) / 2 )`,
       },
     };
   }
@@ -35,11 +35,11 @@ module.exports = function ({ addComponents, theme }) {
     container[`@media (min-width: ${maxWidth2xl})`] = {
       ".b_container-fluid-half-l": {
         width: `calc(${maxWidth2xl} / 2)`,
-        marginLeft: `calc((100vw - ${maxWidth2xl} - 1rem) / 2)`,
+        marginLeft: `calc((100% - ${maxWidth2xl}) / 2)`,
       },
       ".b_container-fluid-half-r": {
         width: `calc(${maxWidth2xl} / 2)`,
-        marginRight: `calc((100vw - ${maxWidth2xl} - 1rem) / 2)`,
+        marginRight: `calc((100% - ${maxWidth2xl}) / 2)`,
       },
     };
   }
