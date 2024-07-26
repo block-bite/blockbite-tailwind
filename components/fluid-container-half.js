@@ -1,14 +1,14 @@
 module.exports = function ({ addComponents, theme }) {
   const container = {
     ".b_container-fluid-half-r": {
-      width: "var(--container-fluid-xl)",
+      width: "var(--container-fluid-xs)",
       marginLeft: "auto",
       marginRight: "auto",
       paddingLeft: "1rem",
       paddingRight: "1rem",
     },
     ".b_container-fluid-half-l": {
-      width: "var(--container-fluid-xl)",
+      width: "var(--container-fluid-xs)",
       marginLeft: "auto",
       marginRight: "auto",
       paddingLeft: "1rem",
@@ -22,12 +22,12 @@ module.exports = function ({ addComponents, theme }) {
   if (maxWidthXl) {
     container[`@media (min-width: ${maxWidthXl})`] = {
       ".b_container-fluid-half-l": {
-        width: `calc(${maxWidthXl} / 2)`,
-        marginLeft: `calc((100vw - ${maxWidthXl} - 1rem) / 2)`,
+        width: "50%",
+        marginLeft: `calc((100vw - var(--container-fluid-xl) - 1rem) / 2)`,
       },
       ".b_container-fluid-half-r": {
-        width: `calc(${maxWidthXl} / 2)`,
-        marginRight: `calc((100vw - ${maxWidthXl} - 1rem) / 2 )`,
+        width: "50%",
+        marginRight: `calc((100vw - var(--container-fluid-xl) - 1rem) / 2 )`,
       },
     };
   }
