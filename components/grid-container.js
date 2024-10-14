@@ -1,7 +1,7 @@
 module.exports = function ({ addComponents, theme }) {
   const container = {
     // Responsive for min-width: 1440px - results 1440px;
-    ".b_grid-area-container": {
+    ".b_grid-container": {
       display: "grid",
       gridTemplateColumns: "1fr repeat(12, minmax(120px, 120px)) 1fr",
       height: "100vh",
