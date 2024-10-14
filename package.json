@@ -1,6 +1,6 @@
 {
   "name": "blockbite-tailwind",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "description": "helper for blockbite plugin and blockbite theme",
   "main": "index.js",
   "scripts": {
