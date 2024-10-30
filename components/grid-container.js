@@ -5,6 +5,13 @@ module.exports = function ({ addComponents, theme }) {
       display: "grid",
       gridTemplateColumns:
         "1fr repeat(12, minmax(120px, 120px)) 1fr !important",
+
+      // Responsive for min-width: 1440px - results 1280px;
+      [`@media (min-width: 1536px)`]: {
+        gridTemplateColumns:
+          "1fr repeat(12, minmax(128px, 128px)) 1fr !important",
+      },
+
       // Responsive for max-width: 1440px - results 1280px;
       [`@media (max-width: 1440px)`]: {
         gridTemplateColumns:
