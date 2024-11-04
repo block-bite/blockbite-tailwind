@@ -51,7 +51,7 @@ module.exports = function ({ addComponents, theme }) {
         gridTemplateColumns: "0px repeat(6, 1fr) 0px !important",
       },
 
-      // grid container half right
+      // grid container half left
       ".b_grid-container-half-right": {
         display: "grid",
         gridTemplateColumns: "repeat(6, minmax(120px, 120px)) 1fr !important",
