@@ -1,6 +1,6 @@
 module.exports = function ({ addComponents, theme }) {
   const container = {
-    // Responsive for min-width: 1440px - results 1440px;
+    // Main grid container
     ".b_grid-container": {
       display: "grid",
       gridTemplateColumns:
@@ -28,8 +28,8 @@ module.exports = function ({ addComponents, theme }) {
       },
     },
 
-    // grid container half left
-    ".b_grid-container-half-left": {
+    // asymetrical grid container half left
+    ".b_grid-container-left": {
       display: "grid",
       gridTemplateColumns: "1fr repeat(6, minmax(120px, 120px)) !important",
 
@@ -56,35 +56,35 @@ module.exports = function ({ addComponents, theme }) {
       [`@media (max-width: 960px)`]: {
         gridTemplateColumns: "0px repeat(6, 1fr) 0px !important",
       },
+    },
 
-      // grid container half left
-      ".b_grid-container-half-right": {
-        display: "grid",
-        gridTemplateColumns: "repeat(6, minmax(120px, 120px)) 1fr !important",
+    // asymetrical grid container half right
+    ".b_grid-container-right": {
+      display: "grid",
+      gridTemplateColumns: "repeat(6, minmax(120px, 120px)) 1fr !important",
 
-        // Responsive for min-width: 1440px - results 1280px;
-        [`@media (min-width: 1536px)`]: {
-          gridTemplateColumns: "repeat(6, minmax(128px, 128px)) 1fr !important",
-        },
+      // Responsive for min-width: 1440px - results 1280px;
+      [`@media (min-width: 1536px)`]: {
+        gridTemplateColumns: "repeat(6, minmax(128px, 128px)) 1fr !important",
+      },
 
-        "& > *": {
-          gridColumnEnd: "7",
-          gridColumnStart: "1",
-          paddingRight: "1rem",
-        },
+      "& > *": {
+        gridColumnEnd: "7",
+        gridColumnStart: "1",
+        paddingRight: "1rem",
+      },
 
-        // Responsive for max-width: 1440px - results 1280px;
-        [`@media (max-width: 1440px)`]: {
-          gridTemplateColumns: "repeat(6, minmax(90px, 90px)) 1fr !important",
-        },
-        // Responsive for max-width: 1080px : results 960px;
-        [`@media (max-width: 1080px)`]: {
-          gridTemplateColumns: "repeat(6, minmax(80px, 80px)) 1fr !important",
-        },
-        // Responsive for max-width: 960px : results auto
-        [`@media (max-width: 960px)`]: {
-          gridTemplateColumns: "0px repeat(6, 1fr) 0px !important",
-        },
+      // Responsive for max-width: 1440px - results 1280px;
+      [`@media (max-width: 1440px)`]: {
+        gridTemplateColumns: "repeat(6, minmax(90px, 90px)) 1fr !important",
+      },
+      // Responsive for max-width: 1080px : results 960px;
+      [`@media (max-width: 1080px)`]: {
+        gridTemplateColumns: "repeat(6, minmax(80px, 80px)) 1fr !important",
+      },
+      // Responsive for max-width: 960px : results auto
+      [`@media (max-width: 960px)`]: {
+        gridTemplateColumns: "0px repeat(6, 1fr) 0px !important",
       },
     },
   };
