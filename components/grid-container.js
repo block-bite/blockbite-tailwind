@@ -33,6 +33,12 @@ module.exports = function ({ addComponents, theme }) {
       display: "grid",
       gridTemplateColumns: "1fr repeat(6, minmax(120px, 120px)) !important",
 
+      "& > *": {
+        gridColumnStart: "2",
+        gridColumnEnd: "8",
+        paddingLeft: "1rem",
+      },
+
       // Responsive for min-width: 1440px - results 1280px;
       [`@media (min-width: 1536px)`]: {
         gridTemplateColumns: "1fr repeat(6, minmax(128px, 128px)) !important",
@@ -59,6 +65,12 @@ module.exports = function ({ addComponents, theme }) {
         // Responsive for min-width: 1440px - results 1280px;
         [`@media (min-width: 1536px)`]: {
           gridTemplateColumns: "repeat(6, minmax(128px, 128px)) 1fr !important",
+        },
+
+        "& > *": {
+          gridColumnEnd: "7",
+          gridColumnStart: "1",
+          paddingRight: "1rem",
         },
 
         // Responsive for max-width: 1440px - results 1280px;
