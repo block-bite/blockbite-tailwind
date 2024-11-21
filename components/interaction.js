@@ -1,7 +1,7 @@
 module.exports = function ({ addComponents }) {
   const b_tileslide_in = {
     ".b_tile-in-left": {
-      position: "absolute",
+      position: "absolute!important",
       top: 0,
       left: 0,
       right: 0,
@@ -20,7 +20,7 @@ module.exports = function ({ addComponents }) {
     ".b_tile-in-fade": {
       opacity: 0,
       transition: "opacity 0.5s",
-      position: "absolute",
+      position: "absolute!important",
       top: 0,
       left: 0,
       right: 0,
