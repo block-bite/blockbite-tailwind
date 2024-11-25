@@ -4,7 +4,7 @@ module.exports = function ({ addComponents, theme }) {
       maxWidth: "var(--b_container-fluid-xl)",
       marginLeft: "auto",
       marginRight: "auto",
-      paddingLeft: "var(--b_container-padding",
+      paddingLeft: "var(--b_container-padding)",
       paddingRight: "var(--b_container-padding)",
     },
   };
