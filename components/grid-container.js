@@ -15,7 +15,7 @@ module.exports = function ({ addComponents, theme }) {
       [`@media (min-width: 960px)`]: {
         display: "grid",
         gridTemplateColumns:
-          "1fr repeat(12, calc(120px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
+          "1fr repeat(12, calc(80px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
       },
 
       [`@media (min-width: 1140px)`]: {
@@ -98,7 +98,7 @@ module.exports = function ({ addComponents, theme }) {
       [`@media (min-width: 960px)`]: {
         display: "grid",
         gridTemplateColumns:
-          "repeat(6, calc(120px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
+          "repeat(6, calc(80px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
         // Child styles only above 960px
         "& > *": {
           gridColumnEnd: "7",
