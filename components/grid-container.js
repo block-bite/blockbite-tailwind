@@ -2,10 +2,8 @@ module.exports = function ({ addComponents, theme }) {
   const container = {
     // Main grid container
     ".b_grid-container": {
-      // Default to flexbox or block for screens below 960px
-      display: "block",
-
       [`@media (max-width: 959px)`]: {
+        display: "block",
         maxWidth: "var(--b_container-fluid-xs)",
         marginLeft: "auto",
         marginRight: "auto",
@@ -21,14 +19,17 @@ module.exports = function ({ addComponents, theme }) {
       },
 
       [`@media (min-width: 1536px)`]: {
+        display: "grid",
         gridTemplateColumns:
           "1fr repeat(12, calc(128px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
       },
       [`@media (max-width: 1440px)`]: {
+        display: "grid",
         gridTemplateColumns:
           "1fr repeat(12, calc(90px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
       },
       [`@media (max-width: 1080px)`]: {
+        display: "grid",
         gridTemplateColumns:
           "1fr repeat(12, calc(80px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
       },
@@ -36,9 +37,8 @@ module.exports = function ({ addComponents, theme }) {
 
     // Asymmetrical grid container half left
     ".b_grid-container-left": {
-      display: "block",
-
       [`@media (max-width: 959px)`]: {
+        display: "block",
         maxWidth: "var(--b_container-fluid-xs)",
         marginLeft: "auto",
         marginRight: "auto",
@@ -53,15 +53,18 @@ module.exports = function ({ addComponents, theme }) {
       },
 
       [`@media (min-width: 1536px)`]: {
+        display: "grid",
         gridTemplateColumns:
           "1fr repeat(6, calc(128px - (var(--b_container-padding, 0px) / 6))) !important",
       },
 
       [`@media (max-width: 1440px)`]: {
+        display: "grid",
         gridTemplateColumns:
           "1fr repeat(6, calc(90px - (var(--b_container-padding, 0px) / 6))) !important",
       },
       [`@media (max-width: 1080px)`]: {
+        display: "grid",
         gridTemplateColumns:
           "1fr repeat(6, calc(80px - (var(--b_container-padding, 0px) / 6))) !important",
       },
@@ -77,9 +80,8 @@ module.exports = function ({ addComponents, theme }) {
 
     // Asymmetrical grid container half right
     ".b_grid-container-right": {
-      display: "block",
-
       [`@media (max-width: 959px)`]: {
+        display: "block",
         maxWidth: "var(--b_container-fluid-xs)",
         marginLeft: "auto",
         marginRight: "auto",
@@ -94,15 +96,18 @@ module.exports = function ({ addComponents, theme }) {
       },
 
       [`@media (min-width: 1536px)`]: {
+        display: "grid",
         gridTemplateColumns:
           "repeat(6, calc(128px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
       },
 
       [`@media (max-width: 1440px)`]: {
+        display: "grid",
         gridTemplateColumns:
           "repeat(6, calc(90px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
       },
       [`@media (max-width: 1080px)`]: {
+        display: "grid",
         gridTemplateColumns:
           "repeat(6, calc(80px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
       },
