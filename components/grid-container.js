@@ -1,130 +1,70 @@
 module.exports = function ({ addComponents, theme }) {
   const container = {
-    // Main grid container
-    ".b_grid-container": {
+    // Shared base styles for smaller screens
+    ".b_grid-container, .b_grid-container-left, .b_grid-container-right": {
       [`@media (max-width: 959px)`]: {
         display: "block",
-        maxWidth: "var(--b_container-fluid-xs)",
+        maxWidth: "var(--b_container-fluid-xs, 98vw)",
         marginLeft: "auto",
         marginRight: "auto",
-        paddingLeft: "var(--b_container-padding)",
-        paddingRight: "var(--b_container-padding)",
+        paddingLeft: "var(--b_container-padding, 1rem)",
+        paddingRight: "var(--b_container-padding, 1rem)",
       },
+    },
 
-      // Use grid layout only above 960px
+    // Main grid container
+    ".b_grid-container": {
       [`@media (min-width: 960px)`]: {
         display: "grid",
         gridTemplateColumns:
-          "1fr repeat(12, calc(80px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
-      },
-
-      [`@media (min-width: 1140px)`]: {
-        display: "grid",
-        gridTemplateColumns:
-          "1fr repeat(12, calc(95px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
-      },
-
-      [`@media (min-width: 1440px)`]: {
-        display: "grid",
-        gridTemplateColumns:
-          "1fr repeat(12, calc(120px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
-      },
-
-      [`@media (min-width: 1536px)`]: {
-        display: "grid",
-        gridTemplateColumns:
-          "1fr repeat(12, calc(128px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
-      },
-
-      [`@media (min-width: 1536px)`]: {
-        display: "grid",
-        gridTemplateColumns:
-          "1fr repeat(12, calc(128px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
+          "1fr repeat(12, var(--b_column-width)) 1fr !important",
       },
     },
 
     // Asymmetrical grid container half left
     ".b_grid-container-left": {
-      [`@media (max-width: 959px)`]: {
-        display: "block",
-        maxWidth: "var(--b_container-fluid-xs)",
-        marginLeft: "auto",
-        marginRight: "auto",
-        paddingLeft: "var(--b_container-padding)",
-        paddingRight: "var(--b_container-padding)",
-      },
-
       [`@media (min-width: 960px)`]: {
         display: "grid",
-        gridTemplateColumns:
-          "1fr repeat(6, calc(80px - (var(--b_container-padding, 0px) / 6))) !important",
-        // Child styles only above 960px
+        gridTemplateColumns: "1fr repeat(6, var(--b_column-width)) !important",
         "& > *": {
           gridColumnStart: "2",
           gridColumnEnd: "8",
         },
       },
-
-      [`@media (min-width: 1140px)`]: {
-        display: "grid",
-        gridTemplateColumns:
-          "1fr repeat(6, calc(95px - (var(--b_container-padding, 0px) / 6))) !important",
-      },
-
-      [`@media (min-width: 1440px)`]: {
-        display: "grid",
-        gridTemplateColumns:
-          "1fr repeat(6, calc(120px - (var(--b_container-padding, 0px) / 6))) !important",
-      },
-
-      [`@media (min-width: 1536px)`]: {
-        display: "grid",
-        gridTemplateColumns:
-          "1fr repeat(6, calc(128px - (var(--b_container-padding, 0px) / 6))) !important",
-      },
     },
 
     // Asymmetrical grid container half right
     ".b_grid-container-right": {
-      [`@media (max-width: 959px)`]: {
-        display: "block",
-        maxWidth: "var(--b_container-fluid-xs)",
-        marginLeft: "auto",
-        marginRight: "auto",
-        paddingLeft: "var(--b_container-padding)",
-        paddingRight: "var(--b_container-padding)",
-      },
-
       [`@media (min-width: 960px)`]: {
         display: "grid",
-        gridTemplateColumns:
-          "repeat(6, calc(80px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
-        // Child styles only above 960px
+        gridTemplateColumns: "repeat(6, var(--b_column-width)) 1fr !important",
         "& > *": {
           gridColumnEnd: "7",
           gridColumnStart: "1",
         },
       },
-
-      [`@media (min-width: 1140px)`]: {
-        display: "grid",
-        gridTemplateColumns:
-          "repeat(6, calc(95px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
-      },
-
-      [`@media (min-width: 1440px)`]: {
-        display: "grid",
-        gridTemplateColumns:
-          "repeat(6, calc(120px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
-      },
-
-      [`@media (min-width: 1536px)`]: {
-        display: "grid",
-        gridTemplateColumns:
-          "repeat(6, calc(128px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
-      },
     },
   };
+  const breakpoints = {
+    "960px": {
+      "--b_column-width":
+        "calc((var(--b_container-fluid-xl, 95vw) - (var(--b_container-padding, 1rem) * 2)) / 12)",
+    },
+    "1440px": {
+      "--b_column-width":
+        "calc((120px * 12 - (var(--b_container-padding, 1rem) * 2)) / 12)", // Adjusted to properly account for padding.
+    },
+    "1536px": {
+      "--b_column-width":
+        "calc((128px * 12 - (var(--b_container-padding, 1rem) * 2)) / 12)", // Consistent calculation for padding subtraction.
+    },
+  };
+  // Add breakpoint-specific variables
+  for (const [breakpoint, vars] of Object.entries(breakpoints)) {
+    container[`@media (min-width: ${breakpoint})`] = {
+      ":root": vars,
+    };
+  }
 
   addComponents(container);
 };
