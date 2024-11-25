@@ -23,11 +23,6 @@ module.exports = function ({ addComponents, theme }) {
         gridTemplateColumns:
           "1fr repeat(12, calc(128px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
       },
-      [`@media (max-width: 1440px)`]: {
-        display: "grid",
-        gridTemplateColumns:
-          "1fr repeat(12, calc(90px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
-      },
     },
 
     // Asymmetrical grid container half left
@@ -51,12 +46,6 @@ module.exports = function ({ addComponents, theme }) {
         display: "grid",
         gridTemplateColumns:
           "1fr repeat(6, calc(128px - (var(--b_container-padding, 0px) / 6))) !important",
-      },
-
-      [`@media (max-width: 1440px)`]: {
-        display: "grid",
-        gridTemplateColumns:
-          "1fr repeat(6, calc(90px - (var(--b_container-padding, 0px) / 6))) !important",
       },
 
       // Child styles only above 960px
@@ -91,11 +80,6 @@ module.exports = function ({ addComponents, theme }) {
           "repeat(6, calc(128px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
       },
 
-      [`@media (max-width: 1440px)`]: {
-        display: "grid",
-        gridTemplateColumns:
-          "repeat(6, calc(90px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
-      },
       // Child styles only above 960px
       [`@media (min-width: 960px)`]: {
         "& > *": {
