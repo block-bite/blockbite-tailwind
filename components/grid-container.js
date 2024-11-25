@@ -3,17 +3,19 @@ module.exports = function ({ addComponents, theme }) {
     // Main grid container
     ".b_grid-container": {
       // Default to flexbox or block for screens below 960px
-        display: "block",
-        maxWidth: "var(--b_container-fluid-xl)",
+      display: "block",
+
+      [`@media (max-width: 959px)`]: {
+        maxWidth: "var(--b_container-fluid-xs)",
         marginLeft: "auto",
         marginRight: "auto",
         paddingLeft: "var(--b_container-padding)",
         paddingRight: "var(--b_container-padding)",
+      },
 
       // Use grid layout only above 960px
       [`@media (min-width: 960px)`]: {
         display: "grid",
-        maxWidth: "100%",
         gridTemplateColumns:
           "1fr repeat(12, calc(120px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
       },
@@ -35,16 +37,17 @@ module.exports = function ({ addComponents, theme }) {
     // Asymmetrical grid container half left
     ".b_grid-container-left": {
       display: "block",
-      maxWidth: "var(--b_container-fluid-xl)",
-      marginLeft: "auto",
-      marginRight: "auto",
-      paddingLeft: "var(--b_container-padding)",
-      paddingRight: "var(--b_container-padding)",
 
+      [`@media (max-width: 959px)`]: {
+        maxWidth: "var(--b_container-fluid-xs)",
+        marginLeft: "auto",
+        marginRight: "auto",
+        paddingLeft: "var(--b_container-padding)",
+        paddingRight: "var(--b_container-padding)",
+      },
 
       [`@media (min-width: 960px)`]: {
         display: "grid",
-        maxWidth: "100%",
         gridTemplateColumns:
           "1fr repeat(6, calc(120px - (var(--b_container-padding, 0px) / 6))) !important",
       },
@@ -75,15 +78,17 @@ module.exports = function ({ addComponents, theme }) {
     // Asymmetrical grid container half right
     ".b_grid-container-right": {
       display: "block",
-      maxWidth: "var(--b_container-fluid-xl)",
-      marginLeft: "auto",
-      marginRight: "auto",
-      paddingLeft: "var(--b_container-padding)",
-      paddingRight: "var(--b_container-padding)",
+
+      [`@media (max-width: 959px)`]: {
+        maxWidth: "var(--b_container-fluid-xs)",
+        marginLeft: "auto",
+        marginRight: "auto",
+        paddingLeft: "var(--b_container-padding)",
+        paddingRight: "var(--b_container-padding)",
+      },
 
       [`@media (min-width: 960px)`]: {
         display: "grid",
-        maxWidth: "100%",
         gridTemplateColumns:
           "repeat(6, calc(120px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
       },
