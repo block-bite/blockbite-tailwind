@@ -18,6 +18,24 @@ module.exports = function ({ addComponents, theme }) {
           "1fr repeat(12, calc(120px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
       },
 
+      [`@media (min-width: 1140px)`]: {
+        display: "grid",
+        gridTemplateColumns:
+          "1fr repeat(12, calc(95px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
+      },
+
+      [`@media (min-width: 1440px)`]: {
+        display: "grid",
+        gridTemplateColumns:
+          "1fr repeat(12, calc(120px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
+      },
+
+      [`@media (min-width: 1536px)`]: {
+        display: "grid",
+        gridTemplateColumns:
+          "1fr repeat(12, calc(128px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
+      },
+
       [`@media (min-width: 1536px)`]: {
         display: "grid",
         gridTemplateColumns:
@@ -39,12 +57,24 @@ module.exports = function ({ addComponents, theme }) {
       [`@media (min-width: 960px)`]: {
         display: "grid",
         gridTemplateColumns:
-          "1fr repeat(6, calc(120px - (var(--b_container-padding, 0px) / 6))) !important",
+          "1fr repeat(6, calc(80px - (var(--b_container-padding, 0px) / 6))) !important",
         // Child styles only above 960px
         "& > *": {
           gridColumnStart: "2",
           gridColumnEnd: "8",
         },
+      },
+
+      [`@media (min-width: 1140px)`]: {
+        display: "grid",
+        gridTemplateColumns:
+          "1fr repeat(6, calc(95px - (var(--b_container-padding, 0px) / 6))) !important",
+      },
+
+      [`@media (min-width: 1440px)`]: {
+        display: "grid",
+        gridTemplateColumns:
+          "1fr repeat(6, calc(120px - (var(--b_container-padding, 0px) / 6))) !important",
       },
 
       [`@media (min-width: 1536px)`]: {
@@ -74,6 +104,18 @@ module.exports = function ({ addComponents, theme }) {
           gridColumnEnd: "7",
           gridColumnStart: "1",
         },
+      },
+
+      [`@media (min-width: 1140px)`]: {
+        display: "grid",
+        gridTemplateColumns:
+          "repeat(6, calc(95px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
+      },
+
+      [`@media (min-width: 1440px)`]: {
+        display: "grid",
+        gridTemplateColumns:
+          "repeat(6, calc(120px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
       },
 
       [`@media (min-width: 1536px)`]: {
