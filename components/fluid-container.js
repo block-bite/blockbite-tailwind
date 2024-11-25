@@ -1,11 +1,11 @@
 module.exports = function ({ addComponents, theme }) {
   const container = {
     ".b_container-fluid": {
-      maxWidth: "var(--container-fluid-xl)",
+      maxWidth: "var(--b_container-fluid-xl)",
       marginLeft: "auto",
       marginRight: "auto",
-      paddingLeft: "1rem",
-      paddingRight: "1rem",
+      paddingLeft: "var(--b_container-padding",
+      paddingRight: "var(--b_container-padding)",
     },
   };
 
@@ -19,19 +19,19 @@ module.exports = function ({ addComponents, theme }) {
         maxWidth: maxWidth2xl,
         marginLeft: "auto",
         marginRight: "auto",
-        paddingLeft: "1rem",
-        paddingRight: "1rem",
+        paddingLeft: "var(--b_container-padding)",
+        paddingRight: "var(--b_container-padding)",
       },
     };
   }
   if (maxWidthSm) {
     container[`@media (max-width: ${maxWidthSm})`] = {
       ".b_container-fluid": {
-        maxWidth: "var(--container-fluid-xs)",
+        maxWidth: "var(--b_container-fluid-xs)",
         marginLeft: "auto",
         marginRight: "auto",
-        paddingLeft: "1rem",
-        paddingRight: "1rem",
+        paddingLeft: "var(--b_container-padding)",
+        paddingRight: "var(--b_container-padding)",
       },
     };
   }

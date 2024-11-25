@@ -2,89 +2,95 @@ module.exports = function ({ addComponents, theme }) {
   const container = {
     // Main grid container
     ".b_grid-container": {
-      display: "grid",
-      gridTemplateColumns:
-        "1fr repeat(12, minmax(120px, 120px)) 1fr !important",
+      // Default to flexbox or block for screens below 960px
+      display: "block",
 
-      // Responsive for min-width: 1440px - results 1280px;
+      // Use grid layout only above 960px
+      [`@media (min-width: 960px)`]: {
+        display: "grid",
+        gridTemplateColumns:
+          "1fr repeat(12, calc(120px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
+      },
+
       [`@media (min-width: 1536px)`]: {
         gridTemplateColumns:
-          "1fr repeat(12, minmax(128px, 128px)) 1fr !important",
+          "1fr repeat(12, calc(128px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
       },
-
-      // Responsive for max-width: 1440px - results 1280px;
       [`@media (max-width: 1440px)`]: {
         gridTemplateColumns:
-          "1fr repeat(12, minmax(90px, 90px)) 1fr !important",
+          "1fr repeat(12, calc(90px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
       },
-      // Responsive for max-width: 1080px : results 960px;
       [`@media (max-width: 1080px)`]: {
         gridTemplateColumns:
-          "1fr repeat(12, minmax(80px, 80px)) 1fr !important",
-      },
-      // Responsive for max-width: 960px : results auto
-      [`@media (max-width: 960px)`]: {
-        gridTemplateColumns: "0px repeat(12, 1fr) 0px !important",
+          "1fr repeat(12, calc(80px - (var(--b_container-padding, 0px) / 12))) 1fr !important",
       },
     },
 
-    // asymetrical grid container half left
+    // Asymmetrical grid container half left
     ".b_grid-container-left": {
-      display: "grid",
-      gridTemplateColumns: "1fr repeat(6, minmax(120px, 120px)) !important",
+      display: "block", // Default to block below 960px
 
-      "& > *": {
-        gridColumnStart: "2",
-        gridColumnEnd: "8",
-        paddingLeft: "1rem",
+      [`@media (min-width: 960px)`]: {
+        display: "grid",
+        gridTemplateColumns:
+          "1fr repeat(6, calc(120px - (var(--b_container-padding, 0px) / 6))) !important",
       },
 
-      // Responsive for min-width: 1440px - results 1280px;
       [`@media (min-width: 1536px)`]: {
-        gridTemplateColumns: "1fr repeat(6, minmax(128px, 128px)) !important",
+        gridTemplateColumns:
+          "1fr repeat(6, calc(128px - (var(--b_container-padding, 0px) / 6))) !important",
       },
 
-      // Responsive for max-width: 1440px - results 1280px;
       [`@media (max-width: 1440px)`]: {
-        gridTemplateColumns: "1fr repeat(6, minmax(90px, 90px)) !important",
+        gridTemplateColumns:
+          "1fr repeat(6, calc(90px - (var(--b_container-padding, 0px) / 6))) !important",
       },
-      // Responsive for max-width: 1080px : results 960px;
       [`@media (max-width: 1080px)`]: {
-        gridTemplateColumns: "1fr repeat(6, minmax(80px, 80px)) !important",
+        gridTemplateColumns:
+          "1fr repeat(6, calc(80px - (var(--b_container-padding, 0px) / 6))) !important",
       },
-      // Responsive for max-width: 960px : results auto
-      [`@media (max-width: 960px)`]: {
-        gridTemplateColumns: "0px repeat(6, 1fr) 0px !important",
+
+      // Child styles only above 960px
+      [`@media (min-width: 960px)`]: {
+        "& > *": {
+          gridColumnStart: "2",
+          gridColumnEnd: "8",
+          paddingLeft: "1rem",
+        },
       },
     },
 
-    // asymetrical grid container half right
+    // Asymmetrical grid container half right
     ".b_grid-container-right": {
-      display: "grid",
-      gridTemplateColumns: "repeat(6, minmax(120px, 120px)) 1fr !important",
+      display: "block", // Default to block below 960px
 
-      // Responsive for min-width: 1440px - results 1280px;
+      [`@media (min-width: 960px)`]: {
+        display: "grid",
+        gridTemplateColumns:
+          "repeat(6, calc(120px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
+      },
+
       [`@media (min-width: 1536px)`]: {
-        gridTemplateColumns: "repeat(6, minmax(128px, 128px)) 1fr !important",
+        gridTemplateColumns:
+          "repeat(6, calc(128px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
       },
 
-      "& > *": {
-        gridColumnEnd: "7",
-        gridColumnStart: "1",
-        paddingRight: "1rem",
-      },
-
-      // Responsive for max-width: 1440px - results 1280px;
       [`@media (max-width: 1440px)`]: {
-        gridTemplateColumns: "repeat(6, minmax(90px, 90px)) 1fr !important",
+        gridTemplateColumns:
+          "repeat(6, calc(90px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
       },
-      // Responsive for max-width: 1080px : results 960px;
       [`@media (max-width: 1080px)`]: {
-        gridTemplateColumns: "repeat(6, minmax(80px, 80px)) 1fr !important",
+        gridTemplateColumns:
+          "repeat(6, calc(80px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
       },
-      // Responsive for max-width: 960px : results auto
-      [`@media (max-width: 960px)`]: {
-        gridTemplateColumns: "0px repeat(6, 1fr) 0px !important",
+
+      // Child styles only above 960px
+      [`@media (min-width: 960px)`]: {
+        "& > *": {
+          gridColumnEnd: "7",
+          gridColumnStart: "1",
+          paddingRight: "1rem",
+        },
       },
     },
   };
