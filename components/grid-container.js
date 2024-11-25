@@ -40,20 +40,17 @@ module.exports = function ({ addComponents, theme }) {
         display: "grid",
         gridTemplateColumns:
           "1fr repeat(6, calc(120px - (var(--b_container-padding, 0px) / 6))) !important",
+        // Child styles only above 960px
+        "& > *": {
+          gridColumnStart: "2",
+          gridColumnEnd: "8",
+        },
       },
 
       [`@media (min-width: 1536px)`]: {
         display: "grid",
         gridTemplateColumns:
           "1fr repeat(6, calc(128px - (var(--b_container-padding, 0px) / 6))) !important",
-      },
-
-      // Child styles only above 960px
-      [`@media (min-width: 960px)`]: {
-        "& > *": {
-          gridColumnStart: "2",
-          gridColumnEnd: "8",
-        },
       },
     },
 
@@ -72,20 +69,17 @@ module.exports = function ({ addComponents, theme }) {
         display: "grid",
         gridTemplateColumns:
           "repeat(6, calc(120px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
+        // Child styles only above 960px
+        "& > *": {
+          gridColumnEnd: "7",
+          gridColumnStart: "1",
+        },
       },
 
       [`@media (min-width: 1536px)`]: {
         display: "grid",
         gridTemplateColumns:
           "repeat(6, calc(128px - (var(--b_container-padding, 0px) / 6))) 1fr !important",
-      },
-
-      // Child styles only above 960px
-      [`@media (min-width: 960px)`]: {
-        "& > *": {
-          gridColumnEnd: "7",
-          gridColumnStart: "1",
-        },
       },
     },
   };
