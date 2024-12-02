@@ -1,20 +1,23 @@
 module.exports = function ({ addComponents, theme }) {
-  const container = {
-    // Shared base styles for smaller screens
-    ".b_grid-container, .b_grid-container-left, .b_grid-container-right": {
-      [`@media (max-width: 959px)`]: {
-        display: "block",
-        maxWidth: "var(--b_container-fluid-xs, 98vw)",
-        marginLeft: "auto",
-        marginRight: "auto",
-        paddingLeft: "var(--b_container-padding, 1rem)",
-        paddingRight: "var(--b_container-padding, 1rem)",
-      },
-    },
+  const maxWidth2xl = theme("screens.2xl");
+  const maxWidthSm = theme("screens.xs")
+    ? theme("screens.xs")
+    : theme("screens.sm");
 
+  const container = {
     // Main grid container
     ".b_grid-container": {
+      display: "block",
+      marginLeft: "auto",
+      marginRight: "auto",
+      paddingLeft: "var(--b_container-padding, 1rem)",
+      paddingRight: "var(--b_container-padding, 1rem)",
       [`@media (min-width: 960px)`]: {
+        display: "grid",
+        gridTemplateColumns:
+          "1rem repeat(12, var(--b_column-width)) 1rem !important",
+      },
+      [`@media (min-width: ${maxWidth2xl})`]: {
         display: "grid",
         gridTemplateColumns:
           "1fr repeat(12, var(--b_column-width)) 1fr !important",
@@ -23,6 +26,9 @@ module.exports = function ({ addComponents, theme }) {
 
     // Asymmetrical grid container half left
     ".b_grid-container-left": {
+      display: "block",
+      marginLeft: "auto",
+      marginRight: "auto",
       [`@media (min-width: 960px)`]: {
         display: "grid",
         gridTemplateColumns: "1fr repeat(6, var(--b_column-width)) !important",
@@ -35,6 +41,9 @@ module.exports = function ({ addComponents, theme }) {
 
     // Asymmetrical grid container half right
     ".b_grid-container-right": {
+      display: "block",
+      marginLeft: "auto",
+      marginRight: "auto",
       [`@media (min-width: 960px)`]: {
         display: "grid",
         gridTemplateColumns: "repeat(6, var(--b_column-width)) 1fr !important",
@@ -45,18 +54,19 @@ module.exports = function ({ addComponents, theme }) {
       },
     },
   };
+
+  console.log("maxWidth2xl", maxWidth2xl);
   const breakpoints = {
     "960px": {
       "--b_column-width":
-        "calc((var(--b_container-fluid-xl, 95vw) - (var(--b_container-padding, 1rem) * 2)) / 12)",
+        "calc((var(--b_container-fluid-xl, 98vw) - (var(--b_container-padding, 1rem) * 2)) / 12)",
     },
     "1440px": {
       "--b_column-width":
-        "calc((120px * 12 - (var(--b_container-padding, 1rem) * 2)) / 12)", // Adjusted to properly account for padding.
+        "calc((var(--b_container-fluid-xl, 98vw) - 2rem) / 12)",
     },
     "1536px": {
-      "--b_column-width":
-        "calc((128px * 12 - (var(--b_container-padding, 1rem) * 2)) / 12)", // Consistent calculation for padding subtraction.
+      "--b_column-width": `calc(((${maxWidth2xl}) - 2rem) / 12))`,
     },
   };
   // Add breakpoint-specific variables
