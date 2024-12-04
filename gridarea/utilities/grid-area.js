@@ -5,6 +5,9 @@ module.exports = function ({ addComponents, theme }) {
         gridArea:
           "var(--b_area-y) / var(--b_area-x) / calc(var(--b_area-y) + var(--b_area-h)) / calc(var(--b_area-x) + var(--b_area-w))",
       },
+      ".b_grid-area": {
+        display: "grid",
+      },
       ".b_grid-area-16": {
         gridTemplateColumns: "repeat(16, 1fr)",
         gridTemplateRows: "repeat(16, 1fr)",
