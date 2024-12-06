@@ -30,7 +30,7 @@ document.querySelector("#app").innerHTML = `
 
    <div class="b_grid-container bg-yellow-200 my-4 h-[300px]">
       <h4 class="border bg-red-200 text-4xl col-span-7 col-start-1 row-start-1">left image</h4>
-      <h4 class="border border-blue-200 bg-blue-200 bg-opacity-40 text-4xl col-span-6 col-start-2 row-start-1">left text</h4>
+      <h4 class="border border-blue-200 bg-blue-200 bg-opacity-40 text-4xl col-span-6 col-start-2 row-start-1">left text with extra layer</h4>
        <p class="border border-red-200 text-4xl col-span-6">right</p>
    </div>
 
@@ -40,6 +40,16 @@ document.querySelector("#app").innerHTML = `
       <h4 class="border border-blue-200 bg-blue-200 bg-opacity-40 text-4xl col-span-6 col-start-8 row-start-1">left text</h4>
        <p class="border border-red-200 text-4xl col-span-6">left</p>
    </div>
+
+
+    <div class="b_grid-container bg-yellow-200 my-4 h-[300px]">
+      <div class="border bg-red-200 text-4xl col-span-7 col-start-1 row-start-1">
+        <h4 class="border border-blue-200 bg-blue-200 bg-opacity-40 text-4xl" style="padding-left:var(--b_fr-size);">left text with --b_fr-size</h4>
+      </div>
+      
+       <p class="border border-red-200 text-4xl col-span-6">right</p>
+   </div>
+
 
   
 </div>

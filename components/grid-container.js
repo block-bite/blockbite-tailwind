@@ -1,22 +1,17 @@
 module.exports = function ({ addComponents, theme }) {
   const maxWidth2xl = theme("screens.2xl");
-
   const maxWidthLg = theme("screens.lg");
-
-  const maxWidthSm = theme("screens.xs")
-    ? theme("screens.xs")
-    : theme("screens.sm");
 
   const container = {
     // Main grid container
     ".b_grid-container": {
+      display: "grid",
+      paddingLeft: "var(--b_padding, 1rem)",
+      paddingRight: "var(--b_padding, 1rem)",
+      marginLeft: "auto",
+      marginRight: "auto",
       [`@media (max-width: ${maxWidthLg})`]: {
-        display: "grid",
-        paddingLeft: "var(--b_padding, 1rem)",
-        paddingRight: "var(--b_padding, 1rem)",
         display: "block",
-        marginLeft: "auto",
-        marginRight: "auto",
       },
       [`@media (min-width: ${maxWidthLg})`]: {
         display: "grid",
@@ -35,6 +30,7 @@ module.exports = function ({ addComponents, theme }) {
     [maxWidthLg]: {
       "--b_col-width":
         "calc((var(--b_fluid-xs, 98vw) - (var(--b_padding, 1rem) * 2)) / 12)",
+      "--b_fr-size": "1rem",
     },
     "1440px": {
       "--b_col-width":
@@ -42,6 +38,8 @@ module.exports = function ({ addComponents, theme }) {
     },
     [maxWidth2xl]: {
       "--b_col-width": `calc((${maxWidth2xl} - (var(--b_padding, 1rem) * 2)) / 12)`,
+      "--b_fr-size":
+        "calc((100vw - (var(--b_col-width) * 12 + var(--b_padding, 1rem) * 2)) / 2 )",
     },
   };
 
