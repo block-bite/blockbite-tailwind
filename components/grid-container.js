@@ -16,7 +16,7 @@ module.exports = function ({ addComponents, theme }) {
       [`@media (min-width: ${maxWidthLg})`]: {
         display: "grid",
         gridTemplateColumns:
-          "1rem repeat(12, var(--b_col-width)) 1rem !important",
+          "1fr repeat(12, var(--b_col-width)) 1fr !important",
       },
       [`@media (min-width: ${maxWidth2xl})`]: {
         display: "grid",
@@ -34,12 +34,12 @@ module.exports = function ({ addComponents, theme }) {
     },
     "1440px": {
       "--b_col-width":
-        "calc((var(--b_fluid-xl, 95vw) - (var(--b_padding, 1rem) * 2)) / 12)",
+        "calc((var(--b_fluid-xl, 95vw) - (var(--b_padding, 2rem) * 2)) / 12)",
     },
     [maxWidth2xl]: {
       "--b_col-width": `calc((${maxWidth2xl} - (var(--b_padding, 1rem) * 2)) / 12)`,
       "--b_fr-size":
-        "calc((max(100%, 100vw) - (var(--b_col-width) * 12 + var(--b_padding, 1rem) * 2)) / 2)",
+        "calc((max(100%, 100vw) - (var(--b_col-width) * 12 + var(--b_padding, 2rem) * 2)) / 2)",
     },
   };
 
