@@ -1,8 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+
+import { getContainer } from "./lib/container.js";
+
 module.exports = {
   content: ["./vite.html", "./vite.js"],
   theme: {
-    extend: {},
+    extend: {
+      container: getContainer(),
+    },
   },
   plugins: [
     require("./gridarea"),
