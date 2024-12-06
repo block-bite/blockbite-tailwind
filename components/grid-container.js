@@ -6,11 +6,11 @@ module.exports = function ({ addComponents, theme }) {
     // Main grid container
     ".b_grid-container": {
       display: "grid",
-      paddingLeft: "var(--b_padding, 1rem)",
-      paddingRight: "var(--b_padding, 1rem)",
-      marginLeft: "auto",
-      marginRight: "auto",
       [`@media (max-width: ${maxWidthLg})`]: {
+        paddingLeft: "var(--b_padding, 1rem)",
+        paddingRight: "var(--b_padding, 1rem)",
+        marginLeft: "auto",
+        marginRight: "auto",
         display: "block",
       },
       [`@media (min-width: ${maxWidthLg})`]: {
@@ -39,7 +39,7 @@ module.exports = function ({ addComponents, theme }) {
     [maxWidth2xl]: {
       "--b_col-width": `calc((${maxWidth2xl} - (var(--b_padding, 1rem) * 2)) / 12)`,
       "--b_fr-size":
-        "calc((100vw - (var(--b_col-width) * 12 + var(--b_padding, 1rem) * 2)) / 2 )",
+        "calc((max(100%, 100vw) - (var(--b_col-width) * 12 + var(--b_padding, 1rem) * 2)) / 2)",
     },
   };
 

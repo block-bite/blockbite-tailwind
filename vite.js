@@ -1,6 +1,6 @@
 import "./vite.css";
 document.querySelector("#app").innerHTML = `
-<div>
+<div style="--b_full:100%;">
   <div class="w-full h-[500px] grid _grid-area-64 bg-red-200">
     <h1 class="bg-yellow-200 b_area md:b_area-x-6 md:b_area-y-4 md:b_area-w-14 md:b_area-h-14">Grid area </h1>
   </div>
@@ -42,7 +42,7 @@ document.querySelector("#app").innerHTML = `
    </div>
 
 
-    <div class="b_grid-container bg-yellow-200 my-4 h-[300px]">
+    <div class="b_grid-container bg-yellow-200 my-4 h-[300px] w-full">
       <div class="border bg-red-200 text-4xl col-span-7 col-start-1 row-start-1">
         <h4 class="border border-blue-200 bg-blue-200 bg-opacity-40 text-4xl" style="padding-left:var(--b_fr-size);">left text with --b_fr-size</h4>
       </div>
