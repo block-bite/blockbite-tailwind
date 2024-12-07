@@ -8,32 +8,17 @@ module.exports = function ({ addComponents, theme }) {
     ".b_container-fluid": {
       marginLeft: "auto",
       marginRight: "auto",
-      paddingLeft: "var(--b_padding, 1rem)",
-      paddingRight: "var(--b_padding, 1rem)",
+      paddingLeft: "var(--b_padding, 4vw)",
+      paddingRight: "var(--b_padding, 4vw)",
     },
   };
 
   const maxWidth2xl = theme("screens.2xl");
-  const maxWidthSm = theme("screens.xs")
-    ? theme("screens.xs")
-    : theme("screens.sm");
-
   // Add a media query for screens at '2xl' size
   if (maxWidth2xl) {
     container[`@media (min-width: ${maxWidth2xl})`] = {
       ".b_container-fluid": {
         maxWidth: maxWidth2xl,
-        marginLeft: "auto",
-        marginRight: "auto",
-        paddingLeft: "var(--b_padding, 2rem)",
-        paddingRight: "var(--b_padding, 2rem)",
-      },
-    };
-  }
-  if (maxWidthSm) {
-    container[`@media (max-width: ${maxWidthSm})`] = {
-      ".b_container-fluid": {
-        maxWidth: "var(--b_fluid-xs, 98vw)",
         marginLeft: "auto",
         marginRight: "auto",
         paddingLeft: "var(--b_padding, 2rem)",
