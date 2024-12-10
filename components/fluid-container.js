@@ -3,9 +3,12 @@
 --b_container-fluid-xl: 95vw;
 --b_padding: 1rem;
 */
-module.exports = function ({ addComponents, theme }) {
+module.exports = function ({ addComponents, theme, config }) {
+  const important = config("important");
+  const prefix = typeof important === "string" ? important : "";
+
   const container = {
-    ".b_container-fluid": {
+    [`${prefix} .b_container-fluid`]: {
       marginLeft: "auto",
       marginRight: "auto",
       paddingLeft: "var(--b_padding, 4vw)",
@@ -17,7 +20,7 @@ module.exports = function ({ addComponents, theme }) {
   // Add a media query for screens at '2xl' size
   if (maxWidth2xl) {
     container[`@media (min-width: ${maxWidth2xl})`] = {
-      ".b_container-fluid": {
+      [`${prefix} .b_container-fluid`]: {
         maxWidth: maxWidth2xl,
         marginLeft: "auto",
         marginRight: "auto",
