@@ -3,17 +3,9 @@ module.exports = function ({ addComponents, theme }) {
   const maxWidth2xl = theme("screens.2xl");
 
   const container = {
-    // Main grid container
     ".b_grid-container": {
-      display: "block",
-      paddingLeft: "var(--b_padding, 4vw)",
-      paddingRight: "var(--b_padding, 4vw)",
-      [`@media (min-width: ${maxWidthLg})`]: {
-        display: "grid",
-        gridTemplateColumns: "1fr repeat(12, var(--b_col-width)) 1fr!important",
-        paddingLeft: "0px",
-        paddingRight: "0px",
-      },
+      display: "grid",
+      gridTemplateColumns: "1fr repeat(12, var(--b_col-width)) 1fr!important",
     },
   };
 
