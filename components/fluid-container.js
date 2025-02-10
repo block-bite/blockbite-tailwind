@@ -24,8 +24,8 @@ module.exports = function ({ addComponents, theme, config }) {
         maxWidth: maxWidth2xl,
         marginLeft: "auto",
         marginRight: "auto",
-        paddingLeft: "var(--b_padding, 2rem)",
-        paddingRight: "var(--b_padding, 2rem)",
+        paddingLeft: "var(--b_padding, 1rem)",
+        paddingRight: "var(--b_padding, 1rem)",
       },
     };
   }

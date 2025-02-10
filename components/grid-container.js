@@ -18,8 +18,8 @@ module.exports = function ({ addComponents, theme, config }) {
       "--b_fr-size": "4vw",
     },
     [maxWidth2xl]: {
-      "--b_col-width": `calc((${maxWidth2xl} - (var(--b_padding, 2rem) * 2)) / 12)`,
-      "--b_padding": "0rem",
+      "--b_col-width": `calc((${maxWidth2xl} - (var(--b_padding, 1rem) * 2)) / 12)`,
+      "--b_padding": "var(--b_padding, 1rem)",
       "--b_fr-size": `calc(100% - ${maxWidth2xl} / 2)`,
     },
   };
