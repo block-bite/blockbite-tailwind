@@ -2,11 +2,11 @@ module.exports = function ({ addComponents, theme, config }) {
   const maxWidthLg = theme("screens.lg");
   const maxWidth2xl = theme("screens.2xl");
 
-  const important = config("important");
-  const prefix = typeof important === "string" ? important : "";
+  //const important = config("important");
+  // const prefix = typeof important === "string" ? important : "";
 
   const container = {
-    [`${prefix} .b_grid-container`]: {
+    [`.b_grid-container`]: {
       display: "grid",
       gridTemplateColumns: "1fr repeat(12, var(--b_col-width)) 1fr!important",
     },
