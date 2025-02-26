@@ -4,8 +4,6 @@
 --b_padding: 1rem;
 */
 module.exports = function ({ addComponents, theme, config }) {
-  const important = config("important");
-
   const container = {
     [`.b_container-fluid`]: {
       marginLeft: "auto",
@@ -19,7 +17,7 @@ module.exports = function ({ addComponents, theme, config }) {
   // Add a media query for screens at '2xl' size
   if (maxWidth2xl) {
     container[`@media (min-width: ${maxWidth2xl})`] = {
-      [` .b_container-fluid`]: {
+      [`.b_container-fluid`]: {
         maxWidth: maxWidth2xl,
         marginLeft: "auto",
         marginRight: "auto",
