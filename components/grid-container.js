@@ -2,9 +2,6 @@ module.exports = function ({ addComponents, theme, config }) {
   const maxWidthLg = theme("screens.lg");
   const maxWidth2xl = theme("screens.2xl");
 
-  //const important = config("important");
-  // const prefix = typeof important === "string" ? important : "";
-
   const container = {
     [`.b_grid-container`]: {
       display: "grid",

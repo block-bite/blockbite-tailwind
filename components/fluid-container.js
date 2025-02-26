@@ -5,10 +5,9 @@
 */
 module.exports = function ({ addComponents, theme, config }) {
   const important = config("important");
-  const prefix = typeof important === "string" ? important : "";
 
   const container = {
-    [`${prefix} .b_container-fluid`]: {
+    [`.b_container-fluid`]: {
       marginLeft: "auto",
       marginRight: "auto",
       paddingLeft: "var(--b_padding, 4vw)",
@@ -20,7 +19,7 @@ module.exports = function ({ addComponents, theme, config }) {
   // Add a media query for screens at '2xl' size
   if (maxWidth2xl) {
     container[`@media (min-width: ${maxWidth2xl})`] = {
-      [`${prefix} .b_container-fluid`]: {
+      [` .b_container-fluid`]: {
         maxWidth: maxWidth2xl,
         marginLeft: "auto",
         marginRight: "auto",
