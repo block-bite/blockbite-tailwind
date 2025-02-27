@@ -1,4 +1,4 @@
-module.exports = function ({ addComponents, theme }) {
+module.exports = function ({ addComponents, theme, config }) {
   const important = config("important");
   const prefix = typeof important === "string" ? important : "";
 
