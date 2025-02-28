@@ -1,4 +1,6 @@
-module.exports = function ({ addComponents, theme, config }) {
+const plugin = require("tailwindcss/plugin");
+
+module.exports = function ({ addComponents, matchUtilities, theme, config }) {
   const important = config("important");
   const prefix = typeof important === "string" ? important : "";
 
@@ -29,5 +31,21 @@ module.exports = function ({ addComponents, theme, config }) {
       },
     },
   ];
+
   addComponents(gridArea);
+
+  // Add matchUtilities to support `b_area-1/1/4/4`
+  matchUtilities(
+    {
+      b_area: (value) => {
+        const [startRow, startCol, endRow, endCol] = value
+          .split("/")
+          .map(Number);
+        return {
+          gridArea: `${startRow} / ${startCol} / ${endRow} / ${endCol}`,
+        };
+      },
+    },
+    { values: {} }
+  );
 };
