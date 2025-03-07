@@ -3,6 +3,7 @@ module.exports = function ({ addComponents, theme, config }) {
   const maxWidth2xl = theme("screens.2xl");
 
   const important = config("important");
+  const cssVars = config("cssVars") | true;
   const prefix = typeof important === "string" ? important : "";
 
   const container = {
@@ -11,8 +12,8 @@ module.exports = function ({ addComponents, theme, config }) {
       gridTemplateColumns: "1fr repeat(12, var(--b_col-width)) 1fr!important",
     },
   };
-  // skip adding the breakpoint-specific variables if skipConfig is true
-  if (!config?.skipCssVariables) {
+  // skip adding the breakpoint-specific variables if cssVars is false
+  if (cssVars) {
     const breakpoints = {
       [maxWidthLg]: {
         "--b_col-width": "calc((100% - ((var(--b_padding, 4vw) ) * 2)) / 12)",
