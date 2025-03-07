@@ -3,7 +3,7 @@ module.exports = function ({ addComponents, theme, config }) {
   const maxWidth2xl = theme("screens.2xl");
 
   const important = config("important");
-  const cssVars = config("cssVars") | true;
+  const cssVars = config("cssVars") | false;
   const prefix = typeof important === "string" ? important : "";
 
   const container = {
