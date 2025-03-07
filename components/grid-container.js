@@ -1,7 +1,4 @@
-module.exports = function (
-  { addComponents, theme, config },
-  skipConfig = false
-) {
+module.exports = function ({ addComponents, theme, config }) {
   const maxWidthLg = theme("screens.lg");
   const maxWidth2xl = theme("screens.2xl");
 
@@ -15,7 +12,7 @@ module.exports = function (
     },
   };
   // skip adding the breakpoint-specific variables if skipConfig is true
-  if (!skipConfig) {
+  if (!config.skipCssVariables) {
     const breakpoints = {
       [maxWidthLg]: {
         "--b_col-width": "calc((100% - ((var(--b_padding, 4vw) ) * 2)) / 12)",
