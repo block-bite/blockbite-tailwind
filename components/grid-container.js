@@ -12,7 +12,7 @@ module.exports = function ({ addComponents, theme, config }) {
     },
   };
   // skip adding the breakpoint-specific variables if skipConfig is true
-  if (!config.skipCssVariables) {
+  if (!config?.skipCssVariables) {
     const breakpoints = {
       [maxWidthLg]: {
         "--b_col-width": "calc((100% - ((var(--b_padding, 4vw) ) * 2)) / 12)",
