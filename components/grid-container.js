@@ -1,4 +1,7 @@
-module.exports = function ({ addComponents, theme, config }) {
+module.exports = function (
+  { addComponents, theme, config },
+  skipConfig = false
+) {
   const maxWidthLg = theme("screens.lg");
   const maxWidth2xl = theme("screens.2xl");
 
@@ -11,25 +14,26 @@ module.exports = function ({ addComponents, theme, config }) {
       gridTemplateColumns: "1fr repeat(12, var(--b_col-width)) 1fr!important",
     },
   };
-
-  const breakpoints = {
-    [maxWidthLg]: {
-      "--b_col-width": "calc((100% - ((var(--b_padding, 4vw) ) * 2)) / 12)",
-      "--b_fr-size": "4vw",
-    },
-    [maxWidth2xl]: {
-      "--b_col-width": `calc((${maxWidth2xl} - (var(--b_padding, 1rem) * 2)) / 12)`,
-      "--b_padding": "var(--b_padding, 1rem)",
-      "--b_fr-size": `calc(100% - ${maxWidth2xl} / 2)`,
-    },
-  };
-
-  // Add breakpoint-specific variables
-  for (const [breakpoint, vars] of Object.entries(breakpoints)) {
-    container[`@media (min-width: ${breakpoint})`] = {
-      ":root": vars,
+  // skip adding the breakpoint-specific variables if skipConfig is true
+  if (!skipConfig) {
+    const breakpoints = {
+      [maxWidthLg]: {
+        "--b_col-width": "calc((100% - ((var(--b_padding, 4vw) ) * 2)) / 12)",
+        "--b_fr-size": "4vw",
+      },
+      [maxWidth2xl]: {
+        "--b_col-width": `calc((${maxWidth2xl} - (var(--b_padding, 1rem) * 2)) / 12)`,
+        "--b_padding": "var(--b_padding, 1rem)",
+        "--b_fr-size": `calc(100% - ${maxWidth2xl} / 2)`,
+      },
     };
-  }
 
+    // Add breakpoint-specific variables
+    for (const [breakpoint, vars] of Object.entries(breakpoints)) {
+      container[`@media (min-width: ${breakpoint})`] = {
+        ":root": vars,
+      };
+    }
+  }
   addComponents(container);
 };
