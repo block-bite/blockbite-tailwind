@@ -9,22 +9,24 @@ module.exports = function ({ addComponents, matchUtilities, theme, config }) {
       gridArea:
         "var(--b_area-y) / var(--b_area-x) / calc(var(--b_area-y) + var(--b_area-h)) / calc(var(--b_area-x) + var(--b_area-w))",
     },
-    ".b_grid-area": {
-      display: "grid",
-    },
+
     ".b_grid-area-16": {
+      display: "grid",
       gridTemplateColumns: "repeat(16, 1fr)",
       gridTemplateRows: "repeat(16, 1fr)",
     },
     ".b_grid-area-32": {
+      display: "grid",
       gridTemplateColumns: "repeat(32, 1fr)",
       gridTemplateRows: "repeat(32, 1fr)",
     },
     ".b_grid-area-64": {
+      display: "grid",
       gridTemplateColumns: "repeat(64, 1fr)",
       gridTemplateRows: "repeat(64, 1fr)",
     },
     ".b_grid-area-96": {
+      display: "grid",
       gridTemplateColumns: "repeat(96, 1fr)",
       gridTemplateRows: "repeat(96, 1fr)",
     },
@@ -32,7 +34,6 @@ module.exports = function ({ addComponents, matchUtilities, theme, config }) {
   matchUtilities(
     {
       b_area: (value) => {
-        console.log("value", value);
         // Remove the square brackets and split the value by "/"
         const parts = value.split("-"); // slice to remove the square brackets
         if (parts.length === 4) {
