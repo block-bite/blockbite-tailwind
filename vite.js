@@ -1,8 +1,13 @@
 import "./vite.css";
 document.querySelector("#app").innerHTML = `
 <div style="--b_full:100%;">
-  <div class="w-full h-[500px] grid _grid-area-64 bg-red-200">
+  <div class="w-full h-[500px] grid b_grid-area-64 bg-red-200">
     <h1 class="bg-yellow-200 b_area md:b_area-x-6 md:b_area-y-4 md:b_area-w-14 md:b_area-h-14">Grid area </h1>
+  </div>
+
+
+   <div class="w-full h-[500px] grid b_grid-area-64 bg-red-200">
+    <h1 class="bg-yellow-200 b_area-[1-1-20-40]">Grid area !</h1>
   </div>
 
   <div class="container bg-red-yellow-200 my-4 mx-auto">
