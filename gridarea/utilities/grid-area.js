@@ -13,21 +13,25 @@ module.exports = function ({ addComponents, matchUtilities, theme, config }) {
       display: "grid",
       gridTemplateColumns: "repeat(16, 1fr)",
       gridTemplateRows: "repeat(16, 1fr)",
+      "--init-area": "'1/1/4/4'",
     },
     [`${prefix} .b_grid-area-32`]: {
       display: "grid",
       gridTemplateColumns: "repeat(32, 1fr)",
       gridTemplateRows: "repeat(32, 1fr)",
+      "--init-area": "'1/1/8/8'",
     },
     [`${prefix} .b_grid-area-64`]: {
       display: "grid",
       gridTemplateColumns: "repeat(64, 1fr)",
       gridTemplateRows: "repeat(64, 1fr)",
+      "--init-area": "'1/1/16/16'",
     },
     [`${prefix} .b_grid-area-96`]: {
       display: "grid",
       gridTemplateColumns: "repeat(96, 1fr)",
       gridTemplateRows: "repeat(96, 1fr)",
+      "--init-area": "'1/1/24/24'",
     },
   });
   matchUtilities(
