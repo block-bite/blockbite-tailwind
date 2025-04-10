@@ -55,7 +55,10 @@ document.querySelector("#app").innerHTML = `
        <p class="border border-red-200 text-4xl col-span-6">right</p>
    </div>
 
-
+<div class="b_theme-bg-red-500 bg-yellow-300 text-white p-40 text-3xl">
+  Works beautifully 🎨
+  <div class="bg-b_theme">This should be red from the parent</div>
+</div>
   
 </div>
 `;

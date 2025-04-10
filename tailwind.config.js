@@ -13,5 +13,6 @@ module.exports = {
     require("./gridarea"),
     require("./components/fluid-container.js"),
     require("./components/grid-container.js"),
+    require("./themecolors"),
   ],
 };
