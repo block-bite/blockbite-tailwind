@@ -1,4 +1,4 @@
-declare module "blockbite-tailwind" {
+declare module "@blockbite/tailwind" {
   // Function declarations
   export function getAspectRatio(...args: any[]): any;
   export function getContainer(...args: any[]): any;

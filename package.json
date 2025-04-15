@@ -1,6 +1,6 @@
 {
-  "name": "blockbite-tailwind",
-  "version": "3.4.2",
+  "name": "@blockbite/tailwind",
+  "version": "3.4.4",
   "description": "helper for blockbite plugin and blockbite theme",
   "main": "index.js",
   "scripts": {
@@ -8,10 +8,13 @@
     "dev": "vite",
     "build": "vite build"
   },
-  "author": "",
+  "author": "block-bite.com",
   "license": "ISC",
   "dependencies": {
     "user": "^0.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
